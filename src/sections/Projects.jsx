@@ -3,7 +3,7 @@ import travel from "../assets/travel-app.jpg";
 import RevealOnScroll from "../Ui/RevealOnScroll";
 import clinic from "../assets/Clinic.png";
 import HealthLink from "../assets/Healthlink.jpeg";
-import classification from "../assets/classification.jpg";
+import classification from "../assets/Classification.jpg";
 
 function Projects() {
   const [projects] = useState([
