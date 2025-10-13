@@ -2,7 +2,7 @@ import { useState } from "react";
 import travel from "../assets/travel-app.jpg";
 import RevealOnScroll from "../Ui/RevealOnScroll";
 import clinic from "../assets/Clinic.png";
-import HealthLink from "../assets/HealthLink.jpeg";
+import HealthLink from "../assets/Healthlink.jpeg";
 import classification from "../assets/classification.jpg";
 
 function Projects() {
