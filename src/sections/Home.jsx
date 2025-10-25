@@ -1,6 +1,7 @@
 import profileImg from "../assets/sami-photo.jpg";
-import { FiDownload, FiUser } from "react-icons/fi";
-import resume from "../assets/resume.pdf";
+import { FiDownload } from "react-icons/fi";
+import resume from "../assets/Sami_Younes_Chaouch_CV (1).pdf";
+import presentation from "../assets/SAMI PORTFOLIO.pdf"; 
 
 function Home() {
   return (
@@ -55,11 +56,12 @@ function Home() {
           </a>
 
           <a
-            href="#about"
+            href={presentation}
+            download
             className="bg-gradient-to-r from-teal-500 to-indigo-600 py-3 px-6 rounded-lg font-medium text-white flex items-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] transition-all duration-300"
           >
-            <span>Voir ma présentation</span>
-            <FiUser className="ml-3 text-xl" />
+            <span>Ma présentation</span>
+            <FiDownload className="ml-3 text-xl" />
           </a>
         </div>
       </div>
