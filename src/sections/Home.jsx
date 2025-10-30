@@ -27,17 +27,18 @@ function Home() {
           </span>
         </h1>
 
-        <p className="text-gray-300 text-lg mb-8">
-          Un <span className="text-blue-400 font-semibold">développeur web</span> passionné par
-          l’<span className="text-indigo-400">apprentissage automatique</span>,{" "}
-          l’<span className="text-indigo-400">intelligence artificielle</span>, la{" "}
-          <span className="text-indigo-400">cybersécurité</span> et les{" "}
-          <span className="text-indigo-400">réseaux informatiques</span>.  
-          J’aime concevoir des applications web modernes, réactives et performantes,
-          alliant créativité et efficacité.
+        {/* Phrase d’introduction créative */}
+        <p className="text-gray-300 italic text-lg mb-6 leading-relaxed">
+          J'aime relier la <span className="text-indigo-400 font-semibold">créativité</span> à la{" "}
+          <span className="text-indigo-400 font-semibold">technique</span>. Pour moi, coder ou
+          monter une vidéo, c'est raconter une histoire avec d'autres outils. La{" "}
+          <span className="text-blue-400 font-semibold">technologie</span> n'est pas un obstacle à la
+          communication, c'est un <span className="text-blue-400 font-semibold">amplificateur de sens</span>.
         </p>
 
-        {/* Boutons */}
+      
+
+        {/* Boutons d’action */}
         <div className="flex flex-wrap justify-center items-center space-x-4 space-y-2 sm:space-y-0">
           <a
             href="#contact"
@@ -60,7 +61,7 @@ function Home() {
             download
             className="bg-gradient-to-r from-teal-500 to-indigo-600 py-3 px-6 rounded-lg font-medium text-white flex items-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] transition-all duration-300"
           >
-            <span>Ma présentation</span>
+            <span>Mon Portfolio</span>
             <FiDownload className="ml-3 text-xl" />
           </a>
         </div>

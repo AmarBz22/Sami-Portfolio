@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 function LoadingScreenAnimation({ onComplete }) {
   const [text, setText] = useState("");
+  const textRef = useRef(null);
+  const [lineWidth, setLineWidth] = useState(0);
 
-  const fullText = "Glad to have you here!";
+  const fullText = "Heureux de vous accueillir !";
 
   useEffect(() => {
     let index = 0;
@@ -21,19 +23,39 @@ function LoadingScreenAnimation({ onComplete }) {
 
     return () => clearInterval(interval);
   }, [onComplete]);
+
+  // Measure text width dynamically
+  useEffect(() => {
+    if (textRef.current) {
+      setLineWidth(textRef.current.offsetWidth + 20); // add a small margin
+    }
+  }, [text]);
+
   return (
     <div className="fixed inset-0 z-50 bg-black text-gray-100 flex flex-col items-center justify-center gap-5">
-      <div className="w-[300px]  h-[3px] bg-gray-800 rounded relative overflow-hidden  ">
-        <div className="w-[40%] h-full bg-blue-500 shadow-[0_0_15px_#4179e3] animate-loading-bar "></div>
+      {/* Upper line */}
+      <div
+        className="h-[3px] bg-gray-800 rounded relative overflow-hidden transition-all duration-300"
+        style={{ width: `${lineWidth}px` }}
+      >
+        <div className="w-full h-full bg-blue-500 shadow-[0_0_15px_#4179e3] animate-loading-bar"></div>
       </div>
 
-      <div className="mb-4 text-2xl font-mono font-semibold">
+      {/* Animated text */}
+      <div
+        ref={textRef}
+        className="mb-4 text-2xl font-mono font-semibold whitespace-nowrap"
+      >
         {text}
-        <span className="animate-blink ml-1 text-2xl font-bold"> | </span>
+        <span className="animate-blink ml-1 text-2xl font-bold">|</span>
       </div>
 
-      <div className="w-[300px]  h-[3px] bg-gray-800 rounded relative overflow-hidden  ">
-        <div className="w-[40%] h-full bg-blue-500 shadow-[0_0_15px_#4179e3] animate-loading-bar "></div>
+      {/* Bottom line */}
+      <div
+        className="h-[3px] bg-gray-800 rounded relative overflow-hidden transition-all duration-300"
+        style={{ width: `${lineWidth}px` }}
+      >
+        <div className="w-full h-full bg-blue-500 shadow-[0_0_15px_#4179e3] animate-loading-bar"></div>
       </div>
     </div>
   );
